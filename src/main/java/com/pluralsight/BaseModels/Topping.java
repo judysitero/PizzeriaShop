@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.BaseModels;
 
 public class Topping {
     private String name;
@@ -16,7 +16,6 @@ public class Topping {
     public String getName() {
         return name;
     }
-
 
     public boolean isPremium() {
         return isPremium;

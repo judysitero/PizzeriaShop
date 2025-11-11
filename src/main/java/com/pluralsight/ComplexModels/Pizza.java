@@ -1,9 +1,12 @@
-package com.pluralsight;
+package com.pluralsight.ComplexModels;
+
+import com.pluralsight.BaseModels.OrderItem;
+import com.pluralsight.BaseModels.Topping;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pizza extends OrderItem{
+public class Pizza extends OrderItem {
 
     private String size;
     private String crust;
@@ -11,26 +14,6 @@ public class Pizza extends OrderItem{
     private boolean stuffedCrust;
     private List<Topping> toppings;
 
-    // STATIC PRICING
-    private  static final double stuffedCrustCost = 2.00;
-
-    private static double getBasePrice(String size, String crust) {
-        return switch (size.toLowerCase()) {
-            case "personal" -> 8.50;
-            case "medium" -> 12.00;
-            case "large" -> 16.50;
-            default -> 0.00;
-        };
-        // NOTE: Cauliflower crust is in the table but doesn't show a price difference; we'll treat it as base price for now.
-    }
-    private static double getPremiumToppingCost(String size) {
-        return switch (size.toLowerCase()) {
-            case"personal" -> 1.00;
-            case "medium" -> 2.00;
-            case "large" -> 3.00;
-            default -> 0.00;
-        };
-    }
 
     public Pizza( String size, String crust, String sauce, boolean stuffedCrust) {
         super(size + "Pizza (" + crust + "Crust)", getBasePrice(size, crust));
@@ -42,14 +25,36 @@ public class Pizza extends OrderItem{
 
         // Note: Base price in super() is ONLY for size/crust. Toppings and stuffed crust are added in getPrice().
     }
+
+    public String getSize() {
+        return size;
+    }
+
+    public String getCrust() {
+        return crust;
+    }
+
+    public String getSauce() {
+        return sauce;
+    }
+
+    public boolean isStuffedCrust() {
+        return stuffedCrust;
+    }
+
     //TOPPING MANAGEMENT
+
+    //Allows external code to add a Topping object to the pizza's internal list (this.toppings). This builds the pizza's complexity.
     public void addTopping(Topping topping) {
         this.toppings.add(topping);
     }
+    //Returns a new ArrayList containing the toppings. This is a defensive copy to prevent external code from
+    // directly corrupting the pizza's internal state (the original toppings list).
 
     public  List<Topping> getToppings() {
         return new ArrayList<>(this.toppings);
     }
+
     @Override
     public double getPrice() {
         double total = this.getBasePrice();
@@ -91,19 +96,24 @@ public class Pizza extends OrderItem{
 
     }
 
-    public String getSize() {
-        return size;
-    }
+    // STATIC PRICING
+    private static final double stuffedCrustCost = 2.00;
 
-    public String getCrust() {
-        return crust;
+    private static double getBasePrice(String size, String crust) {
+        return switch (size.toLowerCase()) {
+            case "personal" -> 8.50;
+            case "medium" -> 12.00;
+            case "large" -> 16.50;
+            default -> 0.00;
+        };
+        // NOTE: Cauliflower crust is in the table but doesn't show a price difference; we'll treat it as base price for now.
     }
-
-    public String getSauce() {
-        return sauce;
-    }
-
-    public boolean isStuffedCrust() {
-        return stuffedCrust;
+    private static double getPremiumToppingCost(String size) {
+        return switch (size.toLowerCase()) {
+            case"personal" -> 1.00;
+            case "medium" -> 2.00;
+            case "large" -> 3.00;
+            default -> 0.00;
+        };
     }
 }
