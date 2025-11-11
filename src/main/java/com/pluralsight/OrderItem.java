@@ -13,10 +13,6 @@ public abstract class OrderItem implements Orderable {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getBasePrice() {
         return basePrice;
     }
