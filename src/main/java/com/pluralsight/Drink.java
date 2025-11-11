@@ -23,7 +23,10 @@ public class Drink extends OrderItem {
     public String getSize() {
         return size;
     }
-    
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 
     public String getFlavor() {
         return flavor;
