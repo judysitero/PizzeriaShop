@@ -24,9 +24,14 @@ public class Drink extends OrderItem {
         return size;
     }
 
+    public void setSize(String size) {
+        this.size = size;
+    }
+
     public String getFlavor() {
         return flavor;
     }
+
 
     @Override
     public double getPrice() {
