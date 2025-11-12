@@ -14,17 +14,25 @@ public class SignaturePizza extends Pizza {
             super.addTopping(t);
         }
     }
-    // Regular Toppings (Regular/Sauces cost 0 for inclusion)
-    public static Topping createRegular(String name) {
-        return new Topping(name, false, 0.00);
-    }
-    // Premium Meat Toppings
-    public static Topping createMeat(String name) {
-        return new Topping(name, true, 1.50);
-    }
-    // Premium Cheese Toppings
-    public static Topping createCheese(String name) {
-        return new Topping(name,true, 0.90);
+
+    static class ToppingFactory {
+
+        // Regular Toppings (Regular/Sauces cost 0 for inclusion)
+        public static Topping createRegular(String name) {
+            return new Topping(name, false, 0.00);
+        }
+
+        // Premium Meat Toppings
+        public static Topping createMeat(String name) {
+            // Set premium to true, extra cost to 1.50 for simplicity
+            return new Topping(name, true, 1.50);
+        }
+
+        // Premium Cheese Toppings
+        public static Topping createCheese(String name) {
+            // Set premium to true, extra cost to 0.90 for simplicity
+            return new Topping(name, true, 0.90);
+        }
     }
 
 

@@ -11,10 +11,10 @@ public class MargheritaPizza extends SignaturePizza {
                 "MARINARA",
                 false,
                 List.of(
-                        createCheese("Mozzarella"),
-                        createRegular("Tomatoes"),
-                        createRegular("Basil"),
-                        createRegular("Olive Oil")
+                        ToppingFactory.createCheese("Mozzarella"),
+                        ToppingFactory.createRegular("Tomatoes"),
+                        ToppingFactory.createRegular("Basil"),
+                        ToppingFactory.createRegular("Olive Oil")
                 )
         );
     }
