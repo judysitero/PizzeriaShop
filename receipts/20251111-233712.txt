@@ -1,0 +1,25 @@
+==================================================
+           THE PIZZERIA SHOP: Order Receipt
+==================================================
+Order Time: 2025-11-11T23:37:12.9844389
+--------------------------------------------------
+PIZZA: MediumPizza (RegularCrust) ($12.00)
+ -Size/Crust: Medium, Regular (Base: $12.00)
+ -Sauce: Marinara
+ -Stuffed Crust: NO (Add $0.00)
+ -Toppings:
+  >Onions (Regular)
+
+PIZZA: Special Of the Day: The Arslan Special (Pineapple & Anchovy) ($14.00)
+ -Size/Crust: MEDIUM, THICK (Base: $12.00)
+ -Sauce: MARINARA
+ -Stuffed Crust: YES (Add $2.00)
+ -Toppings:
+  >Pineapple (Regular)
+  >Anchovies (Regular)
+
+coke Drink (Small) ($0.00)
+2 x Garlic Knots @ $3.00
+--------------------------------------------------
+ORDER TOTAL: $29.00
+==================================================

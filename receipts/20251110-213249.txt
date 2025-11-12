@@ -1,0 +1,16 @@
+==================================================
+           PIZZA-licious Order Receipt
+==================================================
+Order Time: 2025-11-10T21:32:49.5923306
+--------------------------------------------------
+PIZZA: PersonalPizza (ThinCrust) ($9.50)
+ -Size/Crust: Personal, Thin (Base: $8.50)
+ -Sauce: Marinara
+ -Stuffed Crust: NO (Add $0.00)
+ -Toppings:
+  >Pepperoni (Premium)
+  >Mushrooms (Regular)
+
+--------------------------------------------------
+ORDER TOTAL: $9.50
+==================================================
