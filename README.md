@@ -1,4 +1,4 @@
-# 🍕 PIZZA-licious Point of Sale System
+# 🍕 The Pizzeria Shop Sale System
 
 A Java OOP-based point of sale application for PIZZA-licious, a custom pizza shop. This application handles pizza orders, drinks, garlic knots, and generates receipts with accurate pricing.
 
