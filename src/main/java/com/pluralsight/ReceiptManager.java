@@ -27,7 +27,7 @@ public class ReceiptManager {
                 // --- Start Receipt Formatting ---
                 bufferedWriter.write("==================================================");
                 bufferedWriter.newLine();
-                bufferedWriter.write("           THE PIZZERIA SHOP: Order Receipt");
+                bufferedWriter.write("           THE PIZZERIA SHOP: Order Receipt       ");
                 bufferedWriter.newLine();
                 bufferedWriter.write("==================================================");
                 bufferedWriter.newLine();
@@ -35,6 +35,8 @@ public class ReceiptManager {
                 bufferedWriter.newLine();
                 bufferedWriter.write("--------------------------------------------------");
                 bufferedWriter.newLine();
+
+
 
                 // Write details for each item using the Orderable.getDetails() (Polymorphism)
                 List<Orderable> items = order.getItems();
@@ -44,11 +46,20 @@ public class ReceiptManager {
                     bufferedWriter.newLine();
                 }
 
-                bufferedWriter.write("--------------------------------------------------");
+                bufferedWriter.write("------------------------------------------------------");
                 bufferedWriter.newLine();
                 bufferedWriter.write(String.format("ORDER TOTAL: $%,.2f", order.calculateTotal()));
                 bufferedWriter.newLine();
-                bufferedWriter.write("==================================================");
+                bufferedWriter.write(
+                        "// \"\"--.._\n" +
+                        "||  (_)  _ \"-._\n" +
+                        "||    _ (_)    '-.\n" +
+                        "||   (_)   __..-'\n" +
+                        " \\\\__..--\"\"");
+                bufferedWriter.newLine();
+                bufferedWriter.write("========================================================");
+                bufferedWriter.newLine();
+
             }
 
             System.out.println("\nSUCCESS: Receipt saved to " + fileName);
