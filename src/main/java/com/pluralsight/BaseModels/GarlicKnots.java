@@ -26,6 +26,8 @@ public class GarlicKnots extends OrderItem {
 
     @Override
     public String getDescription() {
-        return String.format("%d x %s @ $%.2f", this.quantity, this.getName(), this.getBasePrice());
+        return String.format("Garlic Knots (Qty: %d) - $%.2f", this.quantity, this.getBasePrice());
+
+        //return String.format("%d x %s @ $%.2f", this.quantity, this.getName(), this.getBasePrice());
     }
 }

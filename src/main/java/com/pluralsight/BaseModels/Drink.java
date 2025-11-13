@@ -35,7 +35,8 @@ public class Drink extends OrderItem {
     @Override
     public String getDescription() {
         // (string string float this.size(drink size ex "small"), this.getName(drink name ex "Drink(coke)") this.getBasePrice(inserts drinks price ex $2.50)
-        return String.format("%s %s: $%.2f", this.size, this.getName(), getPriceBySize(size)); //creates a formatted string for the receipt using the item's properties.
+        return String.format("%s %s Drink - $%.2f", this.size, this.flavor, getPrice());
+        //return String.format("%s %s: $%.2f", this.size, this.getName(), getPriceBySize(size)); //creates a formatted string for the receipt using the item's properties.
     }
 
     public static double getPriceBySize(String size) {
