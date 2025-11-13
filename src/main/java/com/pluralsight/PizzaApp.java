@@ -66,7 +66,7 @@ public class PizzaApp {
 
     private void startNewOrder() {
         this.currentOrder = new Order();
-        System.out.println("\n--- Starting New Order ---");
+        System.out.println("\n--- Start Order ---");
     }
 
     /**
@@ -75,9 +75,9 @@ public class PizzaApp {
     private void showOrderScreen() {
         boolean ordering = true;
         while (ordering) {
-            System.out.println("\n===== \uD83D\uDECD\uFE0FORDER SCREEN (Total: $" + String.format("%,.2f", currentOrder.calculateTotal()) + ") =====");
-            System.out.println("\uD83C\uDF551) Add Pizza");
-            System.out.println("\uD83E\uDD642) Add Drink");
+            System.out.println("\n===== \uD83D\uDECD\uFE0FORDER SCREEN (Total: $" + String.format("%,.2f", currentOrder.calculateTotal()) + ") =======");
+            System.out.println("1) Add Pizza");
+            System.out.println("2) Add Drink");
             System.out.println("3) Add Garlic Knots");
             System.out.println("✅4) Checkout");
             System.out.println("❌0) Cancel Order");
@@ -125,15 +125,15 @@ public class PizzaApp {
     }
 
     private void showCheckoutScreen() {
-        System.out.println("\n--- CHECKOUT ---");
+        System.out.println("\n------- CHECKOUT --------");
         System.out.println("Review Your Order:");
         // Print all items
         for (Orderable item : currentOrder.getItems()) {
             System.out.println(item.getDescription());
         }
-        System.out.println("-----------------");
+        System.out.println("----------------------------------");
         System.out.println(String.format("ORDER TOTAL: $%,.2f", currentOrder.calculateTotal()));
-        System.out.println("-----------------");
+        System.out.println("-----------------------------------");
 
         boolean confirm = inputHandler.getYesNo("Confirm order?");
 
@@ -153,16 +153,16 @@ public class PizzaApp {
 
     //========================================================================================================================================
     private void showAddDrinkScreen() {
-        System.out.println("\n===== \uD83E\uDD64ADD DRINK =====");
+        System.out.println("\n============= \uD83E\uDD64ADD DRINK ==============");
 
         // 1. Get Flavor
-        String flavor = inputHandler.getString("Enter drink flavor (e.g., Coke, Sprite, Water)");
+        String flavor = inputHandler.getString("Enter Drink (e.g., Coke, Sprite, Water)");
 
         // 2. Get Size and Price
-        System.out.println("\n--- Select Size ---");
-        System.out.println("1) Small ($2.00)");
-        System.out.println("2) Medium ($2.50)");
-        System.out.println("3) Large ($3.00)");
+        System.out.println("\n---------- Select Size ----------");
+        System.out.println("1) Small: ($2.00)");
+        System.out.println("2) Medium: ($2.50)");
+        System.out.println("3) Large: ($3.00)");
 
         int sizeChoice = inputHandler.getInt("Select a size", 1, 3);
         String size;
@@ -183,7 +183,7 @@ public class PizzaApp {
         }
 
         // 3. Create and Add to Order
-        Drink drink = new Drink(flavor, size);
+        Drink drink = new Drink(size, flavor);
         currentOrder.addItem(drink);
 
         System.out.println("\nSUCCESS: Added " + drink.getDescription());
@@ -196,7 +196,7 @@ public class PizzaApp {
         System.out.println("\n===== ADD GARLIC KNOTS =====");
 
         // 1. Get Quantity
-        int quantity = inputHandler.getInt("Enter quantity of garlic knots to add", 1, 10);
+        int quantity = inputHandler.getInt("How Many Garlic Knots?", 1, 10);
 
         // 2. Create and Add to Order
         // Note: The price calculation is encapsulated inside the GarlicKnots constructor.
@@ -214,7 +214,7 @@ public class PizzaApp {
      * This method is complex and will require more development.
      */
     private void showAddPizzaScreen() {
-        System.out.println("\n===== \uD83C\uDF55ADD PIZZA MENU =====");
+        System.out.println("\n===== \uD83C\uDF55 PIZZA MENU =====");
         System.out.println("1) Build Custom Pizza");
         System.out.println("2) Margherita Pizza (Medium)");
         System.out.println("3) Veggie Pizza (Personal)");
@@ -264,13 +264,13 @@ public class PizzaApp {
     }
 
     private Pizza buildCustomPizza() {
-        System.out.println("\n--- BUILD CUSTOM PIZZA ---");
+        System.out.println("\n---------- BUILD CUSTOM PIZZA ---------");
 
         // --- SIZE ---
-        System.out.println("\n--- Select Size ---");
-        System.out.println("1) Personal 8\" (Base: $8.50)");
-        System.out.println("2) Medium 12\" (Base: $12.00)");
-        System.out.println("3) Large 16\" (Base: $16.50)");
+        System.out.println("\n------------ Select Size ---------------");
+        System.out.println("1) Personal 8\" : $8.50)");
+        System.out.println("2) Medium 12\"  : $12.00)");
+        System.out.println("3) Large 16\"   : $16.50)");
 
         int sizeChoice = inputHandler.getInt("Select pizza size", 1, 3);
         String size = switch (sizeChoice) {
@@ -281,7 +281,7 @@ public class PizzaApp {
         };
 
         // --- CRUST ---
-        System.out.println("\n--- Select Crust ---");
+        System.out.println("\n------------- Select Crust -------------");
         System.out.println("1) Thin");
         System.out.println("2) Regular");
         System.out.println("3) Thick");
@@ -300,18 +300,22 @@ public class PizzaApp {
         boolean stuffedCrust = inputHandler.getYesNo("Would you like stuffed crust? (+$2.00)");
 
         // --- SAUCE ---
-        System.out.println("\n--- Select Sauce ---");
+        System.out.println("\n--------- Select Sauce ----------");
         System.out.println("1) Marinara");
         System.out.println("2) Alfredo");
         System.out.println("3) Pesto");
         System.out.println("4) BBQ");
+        System.out.println("5) Buffalo");
+        System.out.println("6) Olive Oil");
 
-        int sauceChoice = inputHandler.getInt("Select a sauce", 1, 4);
+        int sauceChoice = inputHandler.getInt("Select a sauce", 1, 6);
         String sauce = switch (sauceChoice) {
             case 1 -> "Marinara";
             case 2 -> "Alfredo";
             case 3 -> "Pesto";
             case 4 -> "BBQ";
+            case 5 -> "Buffalo";
+            case 6 -> "Olive Oil";
             default -> "Marinara";
         };
 
@@ -331,14 +335,16 @@ public class PizzaApp {
         boolean done = false;
         while (!done) {
             String currentPrice = String.format("$%,.2f", pizza.getPrice());
-            System.out.println("\n--- ADD TOPPINGS (Current Price: " + currentPrice + ") ---");
+            System.out.println("\n---------- ADD TOPPINGS (Current Price: " + currentPrice + ") ----------");
 
             // Simplified Topping Menu: Expand this later to include all meats/cheeses/regular items
             System.out.println("1) Pepperoni (Premium - Extra: +$1.50)");
             System.out.println("2) Onions (Regular - Included)");
+            System.out.println("3) Sausage");
+            System.out.println("4) Chicken");
             System.out.println("0) Finish Toppings");
 
-            int choice = inputHandler.getInt("Select topping to add", 0, 2);
+            int choice = inputHandler.getInt("Select Topping ", 0, 4);
 
             if (choice == 0) {
                 done = true;
