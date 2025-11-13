@@ -1,6 +1,7 @@
-package com.pluralsight.ComplexModels;
+package com.pluralsight.Signature;
 
-import com.pluralsight.BaseModels.Topping;
+import com.pluralsight.BaseClasses.Topping;
+import com.pluralsight.Products.Pizza;
 
 import java.util.List;
 

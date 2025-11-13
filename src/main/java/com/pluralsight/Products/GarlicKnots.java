@@ -1,4 +1,6 @@
-package com.pluralsight.BaseModels;
+package com.pluralsight.Products;
+
+import com.pluralsight.BaseClasses.OrderItem;
 
 public class GarlicKnots extends OrderItem {
     private int quantity;

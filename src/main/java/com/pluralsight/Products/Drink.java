@@ -1,4 +1,6 @@
-package com.pluralsight.BaseModels;
+package com.pluralsight.Products;
+
+import com.pluralsight.BaseClasses.OrderItem;
 
 public class Drink extends OrderItem {
     //The unique data

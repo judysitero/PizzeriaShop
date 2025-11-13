@@ -1,6 +1,4 @@
-package com.pluralsight.BaseModels;
-
-import com.pluralsight.Orderable;
+package com.pluralsight.BaseClasses;
 
 public abstract class OrderItem implements Orderable {
     private String name;

@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.BaseClasses;
 
 public interface Orderable {
     double getPrice();

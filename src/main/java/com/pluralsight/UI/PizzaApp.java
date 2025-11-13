@@ -1,9 +1,15 @@
-package com.pluralsight;
+package com.pluralsight.UI;
 
-import com.pluralsight.BaseModels.Drink;
-import com.pluralsight.BaseModels.GarlicKnots;
-import com.pluralsight.BaseModels.Topping;
-import com.pluralsight.ComplexModels.*;
+import com.pluralsight.Products.Drink;
+import com.pluralsight.Products.GarlicKnots;
+import com.pluralsight.BaseClasses.Orderable;
+import com.pluralsight.BaseClasses.Topping;
+import com.pluralsight.Products.*;
+import com.pluralsight.Services.Order;
+import com.pluralsight.Services.ReceiptManager;
+import com.pluralsight.Signature.MargheritaPizza;
+import com.pluralsight.Signature.SpecialOfTheDay;
+import com.pluralsight.Signature.VeggiePizza;
 
 import java.util.Scanner;
 

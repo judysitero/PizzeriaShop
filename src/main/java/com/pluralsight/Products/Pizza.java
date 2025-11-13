@@ -1,7 +1,7 @@
-package com.pluralsight.ComplexModels;
+package com.pluralsight.Products;
 
-import com.pluralsight.BaseModels.OrderItem;
-import com.pluralsight.BaseModels.Topping;
+import com.pluralsight.BaseClasses.OrderItem;
+import com.pluralsight.BaseClasses.Topping;
 
 import java.util.ArrayList;
 import java.util.List;

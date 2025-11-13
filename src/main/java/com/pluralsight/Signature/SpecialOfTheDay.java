@@ -1,8 +1,8 @@
-package com.pluralsight.ComplexModels;
+package com.pluralsight.Signature;
 
 import java.util.List;
 
-public class SpecialOfTheDay extends SignaturePizza{
+public class SpecialOfTheDay extends SignaturePizza {
     public SpecialOfTheDay() {
         super(
                 "SPECIAL OF THE DAY: The Arslan Special: Pineapple & Anchovy Delight",
