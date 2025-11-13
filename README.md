@@ -83,3 +83,11 @@ This capstone project demonstrates advanced Java Object-Oriented Programming con
 4. **Checkout**: Review order, confirm, and generate receipt
 
 ## 📸 Sample Output
+<img width="780" height="321" alt="image" src="https://github.com/user-attachments/assets/a20719cf-c11a-4747-b5cc-af061f60337f" />
+
+<img width="764" height="336" alt="image" src="https://github.com/user-attachments/assets/d229e1df-7002-4c8c-a8b1-4463a0a124a7" />
+
+<img width="803" height="316" alt="image" src="https://github.com/user-attachments/assets/88ad3fb0-3219-4473-80ca-6ea996aa5113" />
+
+
+
