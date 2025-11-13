@@ -11,8 +11,8 @@ public class SignaturePizza extends Pizza {
         for (Topping t : defaultToppings) {
             super.addTopping(t);
         }
-    }
 
+    }
     public static Topping createRegular(String name) {
         return new Topping(name, false, false);
     }
@@ -24,22 +24,5 @@ public class SignaturePizza extends Pizza {
     public static Topping createCheese(String name) {
         return new Topping(name, true, false); // Premium, isMeat = false
     }
-//    // Regular Toppings (Regular/Sauces cost 0 for inclusion)
-//    public static Topping createRegular(String name) {
-//        return new Topping(name, false, 0.00);
-//    }
-//    // Premium Meat Toppings - extra cost should be size-based, not fixed
-//    public static Topping createMeat(String name) {
-//        // The extra cost will be calculated dynamically in getPrice()
-//        // based on pizza size, so we can set this to 0 or remove the parameter
-//        return new Topping(name, true, 0.00);
-//    }
-//
-//    // Premium Cheese Toppings
-//    public static Topping createCheese(String name) {
-//        // Same as above - extra cost calculated dynamically
-//        return new Topping(name, true, 0.00);
-//    }
-
 
 }
