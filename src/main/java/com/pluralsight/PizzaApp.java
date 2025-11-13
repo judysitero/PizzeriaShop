@@ -5,7 +5,6 @@ import com.pluralsight.BaseModels.GarlicKnots;
 import com.pluralsight.BaseModels.Topping;
 import com.pluralsight.ComplexModels.*;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class PizzaApp {
@@ -125,15 +124,15 @@ public class PizzaApp {
     }
 
     private void showCheckoutScreen() {
-        System.out.println("\n------- CHECKOUT --------");
+        System.out.println("\n------------- CHECKOUT --------------");
         System.out.println("Review Your Order:");
         // Print all items
         for (Orderable item : currentOrder.getItems()) {
             System.out.println(item.getDescription());
         }
-        System.out.println("----------------------------------");
+        System.out.println("----------------------------------------");
         System.out.println(String.format("ORDER TOTAL: $%,.2f", currentOrder.calculateTotal()));
-        System.out.println("-----------------------------------");
+        System.out.println("------------------------------------------");
 
         boolean confirm = inputHandler.getYesNo("Confirm order?");
 
@@ -218,7 +217,7 @@ public class PizzaApp {
         System.out.println("1) Build Custom Pizza");
         System.out.println("2) Margherita Pizza (Medium)");
         System.out.println("3) Veggie Pizza (Personal)");
-        System.out.println("4) Arslan's Special (Medium, Stuffed)");
+        System.out.println("4) Special of the Day");
         System.out.println("0) Back to Order Menu");
 
         int typeChoice = inputHandler.getInt("Select pizza type", 0, 4);
@@ -241,7 +240,7 @@ public class PizzaApp {
                 pizza = new VeggiePizza();
                 break;
             case 4:
-                pizza = new ArslansPizza();
+                pizza = new SpecialOfTheDay();
                 break;
             default:
                 return;
@@ -327,24 +326,44 @@ public class PizzaApp {
 
         return pizza;
     }
+    /// ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * Allows the user to add multiple custom toppings to an existing pizza.
-     */
     private void addCustomToppings(Pizza pizza) {
         boolean done = false;
         while (!done) {
             String currentPrice = String.format("$%,.2f", pizza.getPrice());
             System.out.println("\n---------- ADD TOPPINGS (Current Price: " + currentPrice + ") ----------");
 
-            // Simplified Topping Menu: Expand this later to include all meats/cheeses/regular items
-            System.out.println("1) Pepperoni (Premium - Extra: +$1.50)");
-            System.out.println("2) Onions (Regular - Included)");
-            System.out.println("3) Sausage");
-            System.out.println("4) Chicken");
+            // Complete Topping Menu based on requirements
+            System.out.println("=== PREMIUM MEATS ===");
+            System.out.println("1) Pepperoni");
+            System.out.println("2) Sausage");
+            System.out.println("3) Ham");
+            System.out.println("4) Bacon");
+            System.out.println("5) Chicken");
+            System.out.println("6) Meatball");
+
+            System.out.println("=== PREMIUM CHEESES ===");
+            System.out.println("7) Mozzarella");
+            System.out.println("8) Parmesan");
+            System.out.println("9) Ricotta");
+            System.out.println("10) Goat Cheese");
+            System.out.println("11) Buffalo Cheese");
+
+            System.out.println("=== REGULAR TOPPINGS (Included) ===");
+            System.out.println("12) Onions");
+            System.out.println("13) Mushrooms");
+            System.out.println("14) Bell Peppers");
+            System.out.println("15) Olives");
+            System.out.println("16) Tomatoes");
+            System.out.println("17) Spinach");
+            System.out.println("18) Basil");
+            System.out.println("19) Pineapple");
+            System.out.println("20) Anchovies");
+
             System.out.println("0) Finish Toppings");
 
-            int choice = inputHandler.getInt("Select Topping ", 0, 4);
+            int choice = inputHandler.getInt("Select Topping", 0, 20);
 
             if (choice == 0) {
                 done = true;
@@ -353,20 +372,179 @@ public class PizzaApp {
 
             // Create the Topping object based on selection
             Topping selected;
-            if (choice == 1) {
-                // Premium Meat: $1.50 extra cost for extra portion
-                selected = new Topping("Pepperoni", true, 1.50);
-            } else {
-                // Regular Topping: $0.00 extra cost
-                selected = new Topping("Onions", false, 0.00);
+            String toppingName = "";
+            boolean isPremium = false;
+            boolean isMeat = false;
+
+            switch (choice) {
+                // Premium Meats
+                case 1:
+                    toppingName = "Pepperoni";
+                    isPremium = true;
+                    isMeat = true;
+                    break;
+                case 2:
+                    toppingName = "Sausage";
+                    isPremium = true;
+                    isMeat = true;
+                    break;
+                case 3:
+                    toppingName = "Ham";
+                    isPremium = true;
+                    isMeat = true;
+                    break;
+                case 4:
+                    toppingName = "Bacon";
+                    isPremium = true;
+                    isMeat = true;
+                    break;
+                case 5:
+                    toppingName = "Chicken";
+                    isPremium = true;
+                    isMeat = true;
+                    break;
+                case 6:
+                    toppingName = "Meatball";
+                    isPremium = true;
+                    isMeat = true;
+                    break;
+
+                // Premium Cheeses
+                case 7:
+                    toppingName = "Mozzarella";
+                    isPremium = true;
+                    isMeat = false;
+                    break;
+                case 8:
+                    toppingName = "Parmesan";
+                    isPremium = true;
+                    isMeat = false;
+                    break;
+                case 9:
+                    toppingName = "Ricotta";
+                    isPremium = true;
+                    isMeat = false;
+                    break;
+                case 10:
+                    toppingName = "Goat Cheese";
+                    isPremium = true;
+                    isMeat = false;
+                    break;
+                case 11:
+                    toppingName = "Buffalo Cheese";
+                    isPremium = true;
+                    isMeat = false;
+                    break;
+
+                // Regular Toppings
+                case 12:
+                    toppingName = "Onions";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 13:
+                    toppingName = "Mushrooms";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 14:
+                    toppingName = "Bell Peppers";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 15:
+                    toppingName = "Olives";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 16:
+                    toppingName = "Tomatoes";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 17:
+                    toppingName = "Spinach";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 18:
+                    toppingName = "Basil";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 19:
+                    toppingName = "Pineapple";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
+                case 20:
+                    toppingName = "Anchovies";
+                    isPremium = false;
+                    isMeat = false;
+                    break;
             }
 
-            // Ask for 'Extra' status
-            boolean isExtra = inputHandler.getYesNo("Add " + selected.getName() + " as EXTRA? (Affects Premium Price)");
-            selected.setExtra(isExtra);
+            // Create topping - extra cost will be calculated dynamically based on pizza size
+            selected = new Topping(toppingName, isPremium, isMeat);
 
+            // Only ask about "extra" for premium toppings (meats and cheeses)
+            boolean isExtra = false;
+            if (isPremium) {
+                isExtra = inputHandler.getYesNo("Add " + selected.getName() + " as EXTRA? (Additional cost)");
+            } else {
+                System.out.println("Added " + selected.getName() + " (Regular topping - included in base price).");
+            }
+
+            selected.setExtra(isExtra);
             pizza.addTopping(selected);
-            System.out.println("Added " + selected.getName() + ".");
+
+            if (isPremium) {
+                System.out.println("Added " + selected.getName() + (isExtra ? " (Extra)" : ""));
+            }
         }
     }
 }
+
+
+    /**
+     * Allows the user to add multiple custom toppings to an existing pizza.
+     */
+//    private void addCustomToppings(Pizza pizza) {
+//        boolean done = false;
+//        while (!done) {
+//            String currentPrice = String.format("$%,.2f", pizza.getPrice());
+//            System.out.println("\n---------- ADD TOPPINGS (Current Price: " + currentPrice + ") ----------");
+//
+//            // Simplified Topping Menu: Expand this later to include all meats/cheeses/regular items
+//            System.out.println("1) Pepperoni (Premium - Extra: +$1.50)");
+//            System.out.println("2) Onions (Regular - Included)");
+//            System.out.println("3) Sausage");
+//            System.out.println("4) Chicken");
+//            System.out.println("0) Finish Toppings");
+//
+//            int choice = inputHandler.getInt("Select Topping ", 0, 4);
+//
+//            if (choice == 0) {
+//                done = true;
+//                break;
+//            }
+//
+//            // Create the Topping object based on selection
+//            Topping selected;
+//            if (choice == 1) {
+//                // Premium Meat: $1.50 extra cost for extra portion
+//                selected = new Topping("Pepperoni", true, 1.50);
+//            } else {
+//                // Regular Topping: $0.00 extra cost
+//                selected = new Topping("Onions", false, 0.00);
+//            }
+//
+//            // Ask for 'Extra' status
+//            boolean isExtra = inputHandler.getYesNo("Add " + selected.getName() + " as EXTRA? (Affects Premium Price)");
+//            selected.setExtra(isExtra);
+//
+//            pizza.addTopping(selected);
+//            System.out.println("Added " + selected.getName() + ".");
+//        }
+//    }
+//}
