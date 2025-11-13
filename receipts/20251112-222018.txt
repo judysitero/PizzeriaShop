@@ -1,0 +1,24 @@
+==================================================
+           THE PIZZERIA SHOP: Order Receipt       
+==================================================
+Order Time: 2025-11-12T22:20:18.3806275
+--------------------------------------------------
+Medium Regular Pizza - $21.00
+   Base: $12.00 | Stuffed Crust: +$2.00
+   Sauce: Marinara
+   Toppings:
+     Pepperoni (Premium): +$2.00
+     Basil (Regular): Included
+     Ham (Premium): +$2.00 + $1.00 extra
+     Chicken (Premium): +$2.00
+     Tomatoes (Regular): Included
+
+Medium coke Drink - $2.50
+------------------------------------------------------
+ORDER TOTAL: $23.50
+// ""--.._
+||  (_)  _ "-._
+||    _ (_)    '-.
+||   (_)   __..-'
+ \\__..--""
+========================================================
