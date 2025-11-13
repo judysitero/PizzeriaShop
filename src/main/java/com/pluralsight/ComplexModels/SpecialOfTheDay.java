@@ -2,12 +2,12 @@ package com.pluralsight.ComplexModels;
 
 import java.util.List;
 
-public class ArslansPizza extends SignaturePizza{
-    public ArslansPizza() {
+public class SpecialOfTheDay extends SignaturePizza{
+    public SpecialOfTheDay() {
         super(
-                "SPECIAL OF THE DAY: The Arslan Special (Pineapple & Anchovy)",
+                "SPECIAL OF THE DAY: Arslan Special Pineapple & Anchovy Delight",
                 "MEDIUM",
-                "THICK",
+                "REGULAR",
                 "MARINARA",
                 true,
                 List.of(
