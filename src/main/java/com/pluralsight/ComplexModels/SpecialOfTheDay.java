@@ -5,7 +5,7 @@ import java.util.List;
 public class SpecialOfTheDay extends SignaturePizza{
     public SpecialOfTheDay() {
         super(
-                "SPECIAL OF THE DAY: Arslan Special Pineapple & Anchovy Delight",
+                "SPECIAL OF THE DAY: The Arslan Special: Pineapple & Anchovy Delight",
                 "MEDIUM",
                 "REGULAR",
                 "MARINARA",
