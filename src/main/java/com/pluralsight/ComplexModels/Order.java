@@ -21,10 +21,10 @@ public class Order {
         this.items.add(item);
     }
 
-    //The calculateTotal() method is the most powerful part of this class, showcasing advanced Java concepts.
+    //The calculateTotal() method is an important piece of this class.
 
-    //Java Streams (.stream()): This is a modern, concise way to process collections, which you saw in the streams
-    // workbook. It converts the static List into a sequential stream of data that can be efficiently processed. pg 66
+    //Java Streams (.stream()): This is a modern, concise way to process collections.
+    // It converts the static List into a sequential stream of data that can be efficiently processed. (Workbook 6, pg.66)
 
     //Polymorphism in Action (Orderable::getPrice): This is called a Method Reference. It tells the stream to call
     // the getPrice() method on every single item (Pizza, Drink, or GarlicKnots) in the list
@@ -34,30 +34,23 @@ public class Order {
                 // Map each Orderable to its price
                 .mapToDouble(Orderable::getPrice)
                 .sum();
-        //This is the terminal operation that aggregates all the prices retrieved into a single double value (total).
-
-
-        // Alternative: using a traditional loop (like in my LedgerApp)
-        // for (Orderable item : items) {
-        //     total += item.getPrice();
-        // }
 
         return total;
     }
 
     public boolean hasPizza() {
         return items.stream().anyMatch(item ->item instanceof Pizza);
-        //Uses a stream operation (anyMatch) to check if any item in the list is an instance of the specific Pizza class.
+        //Using the stream operation (anyMatch) to check if any item in the list is an instance of the specific Pizza class.
     }
 
     public boolean hasItem() {
         return !items.isEmpty();
-        //Checks if the list of items is not empty. !items.isEmpty() is a quick way to return true if any items exist.
+        //Will checks if the list of items is not empty. !items.isEmpty() is a quick way to return true if any items exist.
     }
 
     public boolean hasSideOrDrink() {
         return items.stream().anyMatch(item -> item instanceof Drink || item instanceof GarlicKnots);
-        //Uses a stream (anyMatch) to check if any item is an instance of either Drink OR GarlicKnots. This directly
+        //Uses stream (anyMatch) to check if any item is an instance of either Drink OR GarlicKnots. This directly
         // supports the rule: "If a customer places an order with 0 pizzas, they must purchase garlic knots or a drink."
     }
 

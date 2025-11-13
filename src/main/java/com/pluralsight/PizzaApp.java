@@ -37,7 +37,7 @@ public class PizzaApp {
         // Close resources if needed (InputHandler manages Scanner internally)
     }
 
-    // --- SCREEN FLOW METHODS (Similar to your LedgerApp menus) ---
+    // --- SCREEN FLOW METHODS  ---
 
     /**
      * Displays the Home Screen and handles navigation (1: New Order, 0: Exit).
@@ -45,9 +45,16 @@ public class PizzaApp {
     private void showHomeScreen() {
         boolean running = true;
         while (running) {
-            System.out.println("\n===== \uD83C\uDFE0THE PIZZERIA: HOME SCREEN =====");
-            System.out.println("1) New Order");
-            System.out.println("0) Exit");
+            System.out.println("\n✨" + "~".repeat(48) + "✨");
+            System.out.println("            🍕 THE PIZZERIA 🍕");
+            System.out.println("          Where Every Pizza Tells a Story!");
+            System.out.println("✨" + "~".repeat(48) + "✨");
+            System.out.println();
+            System.out.println("      [1] 🛒 Start a New Order");
+            System.out.println("      [0] 🚪 Exit");
+            System.out.println();
+            System.out.println("✨" + "~".repeat(48) + "✨");
+
 
             int choice = inputHandler.getInt("Please enter your choice", 0, 1);
 
@@ -65,7 +72,7 @@ public class PizzaApp {
 
     private void startNewOrder() {
         this.currentOrder = new Order();
-        System.out.println("\n--- Start Order ---");
+        System.out.println("\n🍕-------------- Start Order ---------------🍕");
     }
 
     /**
@@ -74,7 +81,7 @@ public class PizzaApp {
     private void showOrderScreen() {
         boolean ordering = true;
         while (ordering) {
-            System.out.println("\n===== \uD83D\uDECD\uFE0FORDER SCREEN (Total: $" + String.format("%,.2f", currentOrder.calculateTotal()) + ") =======");
+            System.out.println("\n🍕======= \uD83D\uDECD\uFE0FORDER SCREEN (Total: $" + String.format("%,.2f", currentOrder.calculateTotal()) + ") =========🍕");
             System.out.println("1) Add Pizza");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Garlic Knots");
@@ -124,7 +131,7 @@ public class PizzaApp {
     }
 
     private void showCheckoutScreen() {
-        System.out.println("\n------------- CHECKOUT --------------");
+        System.out.println("\n🍕--------------- CHECKOUT ----------------🍕");
         System.out.println("Review Your Order:");
         // Print all items
         for (Orderable item : currentOrder.getItems()) {
@@ -158,7 +165,7 @@ public class PizzaApp {
         String flavor = inputHandler.getString("Enter Drink (e.g., Coke, Sprite, Water)");
 
         // 2. Get Size and Price
-        System.out.println("\n---------- Select Size ----------");
+        System.out.println("\n-------------- Select Size ---------------");
         System.out.println("1) Small: ($2.00)");
         System.out.println("2) Medium: ($2.50)");
         System.out.println("3) Large: ($3.00)");
@@ -213,7 +220,7 @@ public class PizzaApp {
      * This method is complex and will require more development.
      */
     private void showAddPizzaScreen() {
-        System.out.println("\n===== \uD83C\uDF55 PIZZA MENU =====");
+        System.out.println("\n🍕========== \uD83C\uDF55 PIZZA MENU ==========🍕");
         System.out.println("1) Build Custom Pizza");
         System.out.println("2) Margherita Pizza (Medium)");
         System.out.println("3) Veggie Pizza (Personal)");
