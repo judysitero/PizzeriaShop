@@ -116,27 +116,20 @@ I really liked this code because polymorphism was something I didn't quite under
 # 📈 Room for Improvement
 
 ## 🔄 Enhanced Navigation
-"Go Back" Functionality: Add navigation options to return to previous screens without canceling entire orders
-
-Breadcrumb Navigation: Visual indicators showing users where they are in the ordering process
-
-Edit Existing Items: Allow customers to modify pizzas, drinks, or garlic knots already added to their order
+- "Go Back" Functionality: Add navigation options to return to previous screens without canceling entire orders
+- Breadcrumb Navigation: Visual indicators showing users where they are in the ordering process
+- Edit Existing Items: Allow customers to modify pizzas, drinks, or garlic knots already added to their order
 
 ## 👤 Customer Experience
-Customer Information: Collect and store customer names for personalized receipts and order tracking
-
-Order History: Implement a system to view and reorder from previous orders
-
-Contact Information: Optional phone number or email for order status updates
+- Customer Information: Collect and store customer names for personalized receipts and order tracking
+- Order History: Implement a system to view and reorder from previous orders
+- Contact Information: Optional phone number or email for order status updates
 
 ## 🧾 Receipt Enhancements
-Signature Pizza Names: Display the actual signature pizza names (e.g., "Margherita Pizza") instead of generic descriptions on receipts
-
-Itemized Pricing: More detailed breakdown of costs for better transparency
-
-Order Numbers: Unique order identifiers for customer reference
-
-Estimated Wait Times: Based on order complexity and current time
+- Signature Pizza Names: Display the actual signature pizza names (e.g., "Margherita Pizza") instead of generic descriptions on receipts
+- Itemized Pricing: More detailed breakdown of costs for better transparency
+- Order Numbers: Unique order identifiers for customer reference
+- Estimated Wait Times: Based on order complexity and current time
 
 
 
