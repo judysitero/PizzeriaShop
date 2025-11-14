@@ -31,10 +31,7 @@ public class Order {
     // the getPrice() method on every single item (Pizza, Drink, or GarlicKnots) in the list
     public double calculateTotal() {
         double total = 0.0;
-        total = this.items.stream()
-                // Map each Orderable to its price
-                .mapToDouble(Orderable::getPrice)
-                .sum();
+        total = this.items.stream().mapToDouble(Orderable::getPrice).sum();  // Map each Orderable to its price
 
         return total;
     }
@@ -56,7 +53,8 @@ public class Order {
     }
 
     public List<Orderable> getItems() {
-        return new ArrayList<>(items); //Return a defensive copy
+        return new ArrayList<>(items);
+        //Return a defensive copy
     }
 
     public LocalDateTime getOrderTime() {

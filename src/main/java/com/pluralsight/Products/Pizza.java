@@ -54,7 +54,7 @@ public class Pizza extends OrderItem {
 
         // Calculate Topping Costs
         for (Topping t : toppings) {
-            if (t.isPremium()) {
+            if (t.isPremium()) { //The central decision point is the line
                 double basePremiumCost = getPremiumToppingCost(this.size, t.isMeat());
 
                 if (t.isExtra()) {
@@ -65,6 +65,8 @@ public class Pizza extends OrderItem {
                 }
             }
             // Regular toppings cost $0 as they are 'Included' - no charge
+            // The loop continues to the next topping without modifying 'total'
+            // if t.isPremium() is FALSE.
         }
 
         // Add Stuffed Crust

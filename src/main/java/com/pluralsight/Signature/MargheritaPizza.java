@@ -5,7 +5,7 @@ import java.util.List;
 public class MargheritaPizza extends SignaturePizza {
     public MargheritaPizza() {
         super(
-                "Margherita Pizza",
+                "MARGHERITA PIZZA",
                 "MEDIUM",
                 "REGULAR",
                 "MARINARA",
