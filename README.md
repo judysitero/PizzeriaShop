@@ -100,7 +100,7 @@ This capstone project demonstrates advanced Java Object-Oriented Programming con
 <img width="403" height="514" alt="image" src="https://github.com/user-attachments/assets/59b7755f-f69e-457a-b824-1ffc2715e796" />
 
 
-## Interesting Piece of Code
+## 💡 Interesting Piece of Code
 I really liked this code because polymorphism was something I didn't quite understand how to do. The getPrice() method really encapsulates all the complex pricing logic in a simplified way. 
 
 ### The method elegantly handles:
