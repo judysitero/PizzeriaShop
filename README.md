@@ -100,5 +100,19 @@ This capstone project demonstrates advanced Java Object-Oriented Programming con
 <img width="403" height="514" alt="image" src="https://github.com/user-attachments/assets/59b7755f-f69e-457a-b824-1ffc2715e796" />
 
 
+## Interesting Piece of Code
+I really liked this code because polymorphism was something I didn't quite understand how to do. The getPrice() method really encapsulates all the complex pricing logic in a simplified way. 
+
+### The method elegantly handles:
+- 3 different pizza sizes with different base prices
+- Premium vs regular toppings (some free, some cost extra)
+- Meat vs cheese toppings with different pricing
+- Extra topping surcharges
+- Stuffed crust option
+
+
+<img width="836" height="563" alt="image" src="https://github.com/user-attachments/assets/ddef92a8-ff4a-4d56-858b-dcbb0e587fca" />
+
+
 
 
